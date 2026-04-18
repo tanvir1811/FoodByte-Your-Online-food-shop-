@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+ 
+ <link rel="stylesheet" href="register.css">
+ <link rel="stylesheet" href="login.css">
+
+
+    </head>
+    <body>
+            <div id="logindiv">
+            <div id="headbar">
+        <h1 id="foodbyte">FoodByte</h1>
+        <h1 id="registertxt">Register as a Customer</h1>
+
+    </div>
+ <div id="login">
+<span id="logintxt">Login</span>
+<br>
+<form  id="form">
+    <div id="rolediv">
+ <h3 id="roletxt">You are:</h3>
+    <select id="selectrole">
+        <option value="customer" id="customerrole">Customer</option>
+        <option value="rider" id="riderrole">Rider</option>
+        <option value="admin" id="adminrole">Admin</option>
+    </select>
+    </div>
+   
+    <input type="text" name="Username" id="Username" required placeholder="Username">
+    <br>
+    <input type="password" id="password" name="password" required placeholder="Password">
+    <br>
+    <button id="loginbtn">Login</button>
+    <br>
+     
+</form>
+
+ </div>   
+        </div>
+
+<div id="registerdiv">
+     <div id="headbar">
+        <span id="foodbyte">FoodByte</span>
+        
+
+    </div>
+ <div id="register">
+<span id="resgistertxt">Register</span>
+<br>
+<form  id="registerform">
+   <input type="text" id="regUsername" required placeholder="Username">
+    <br>
+    <input type="password" id="regpassword1" required placeholder="Password">
+    <br>
+     <input type="password" id="regpassword2" required placeholder=" Confirm Password">
+    <br>
+    <button id="registerbtn">Register</button>
+    <br>
+     <span id="have_a_account">Have a account, <span id="dlogin" onclick="openloginpage()">login</span>?</span>
+</form>
+
+ </div>   
+</div>
+
+
+
+
+<script type="module" src="/script.js"></script>
+    </body>
+</html>

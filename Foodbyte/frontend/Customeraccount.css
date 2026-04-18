@@ -1,0 +1,130 @@
+/* Update for the account page container background */
+#customer-myaccount {
+    height: 82vh;
+    /* Path updated to the img folder */
+    background-image: url("./img/customeraccount.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    width: 80vw;
+    margin-right: 2%;
+    margin-top: 5vh;
+    display: none;
+    margin-bottom: 5vh;
+    padding-top: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(149, 20, 20, 0.3);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+#customer-userinfo {
+    height: 5%;
+    width: 100%;
+    background-color: rgb(234, 197, 11);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 2%;
+}
+
+/* Container */
+.customer-myaccount-container {
+    max-width: 800px;
+    margin: 40px auto;
+    font-family: Arial, sans-serif;
+    background-color: rgba(4, 97, 104, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 3%;
+    border-radius: 10px;
+}
+
+/* Fieldsets */
+.customer-myaccount-container fieldset {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Legends */
+.customer-myaccount-container legend {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Contact Grid */
+.customer-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.customer-contact-item label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.customer-contact-item input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Address Grid */
+.customer-address-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.customer-address-grid div label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.customer-address-grid div input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Textarea */
+#customer-instructions {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Buttons */
+.customer-buttons {
+    text-align: right;
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+
+#customer-editButton, 
+#customer-saveButton {
+    background-color: rgb(251, 191, 175);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#customer-editButton:hover, 
+#customer-saveButton:hover {
+    background-color: rgb(240, 160, 140);
+}

@@ -1,0 +1,168 @@
+#logindiv {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+   
+    background-image: url("./img/Login.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+}
+
+/* Rest of your CSS remains the same */
+html {
+    height: 100dvh;
+    width: 100dvw;
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+#login {
+    overflow: visible;
+    width: 40%;
+    height: 35%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 15%;
+    margin-bottom: 50%;
+    background-color: rgb(246, 246, 245);
+    padding: 1%;
+    border-radius: 2%;
+    opacity: 0.8;
+}
+
+#logintxt {
+    font: 1em sans-serif;
+    color: #561e09;
+    font-weight: bolder;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-bottom: 2%;
+}
+
+#form {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 3%;
+    margin-bottom: 1%;
+    height: 70%;
+    width: 80%;
+}
+
+#Username {
+    background-color: rgb(251, 191, 175);
+    height: 14%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2%;
+    border-color: transparent;
+    border-radius: 10px;
+}
+
+#rolediv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+#roletxt, #selectrole {
+    background-color: rgb(251, 191, 175);
+    color: rgba(21, 1, 1, 0.9);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#password {
+    background-color: rgb(251, 191, 175);
+    height: 14%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2%;
+    border-color: transparent;
+    border-radius: 10px;
+}
+
+#loginbtn {
+    background-color: rgb(249, 95, 52);
+    color: rgb(146, 234, 221);
+    height: 15%;
+    width: 30%;
+    margin-left: 36%;
+    margin-right: 36%;
+    margin-bottom: 2%;
+    border-color: transparent;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#loginbtn:hover {
+    transform: translateY(3px);
+}
+
+#forgotpass {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    color: rgb(46, 1, 1);
+    margin-left: 35%;
+    margin-right: 30%;
+}
+
+#headbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 98vw;
+    height: 60px;
+    background-color: rgb(46, 10, 3);
+    padding: 1%;
+    border-radius: 2%;
+    opacity: 0.7;
+}
+
+#foodbyte {
+    color: rgb(237, 229, 142);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#registertxt {
+    font-size: 25px;
+    color: #e2d3d1;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#registertxt:hover {
+    background-color: rgba(180, 43, 8, 0.764);
+    opacity: 0.8;
+    color: #ede0dc;
+    transform: translateX(6px);
+}

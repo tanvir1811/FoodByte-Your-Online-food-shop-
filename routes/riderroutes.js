@@ -23,8 +23,8 @@ router.post('/',             requireAdmin,  registerRider);
 router.get('/',              requireAdmin,  getAllRiders);
 router.get('/me', requireLogin, getRiderMe);   
 router.get('/:id',           requireAdmin,  getRider);
-router.put('/me',                           updateRider);
 router.patch('/:id/status',  requireAdmin,  updateRiderStatus);
+router.patch('/:id/all',  requireAdmin,  updateRider);
 router.delete('/:id',        requireAdmin,  deleteRider);
 
 module.exports = router;

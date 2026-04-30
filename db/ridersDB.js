@@ -31,14 +31,41 @@ const ridersDB = {
     return rows[0];
   },
 
-  async update(id, data) {
-    const db = getDB();
-    const { phone, license_link, photo_link } = data;
-    await db.execute(
-      'UPDATE riders SET phone=?, license_link=?, photo_link=? WHERE id=?',
-      [phone, license_link, photo_link, id]
-    );
-  },
+async update(id, data) {
+  const db = getDB();
+
+  const {
+    username,
+    phone,
+    password,
+    license_link,
+    photo_link,
+    joining_date,
+    status
+  } = data;
+
+  await db.execute(
+    `UPDATE riders 
+     SET username = ?, 
+         phone = ?, 
+         password = COALESCE(?, password), 
+         license_link = ?, 
+         photo_link = ?, 
+         joining_date = ?, 
+         status = ?
+     WHERE id = ?`,
+    [
+      username,
+      phone,
+      password || null, // if null → keeps old password
+      license_link,
+      photo_link,
+      joining_date,
+      status,
+      id
+    ]
+  );
+},
 
   async updateStatus(id, status) {
     const db = getDB();

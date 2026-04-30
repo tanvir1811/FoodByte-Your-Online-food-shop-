@@ -36,9 +36,23 @@ const riderService = {
   },
 
   async updateProfile(id, data) {
+  try {
+    // If password is provided → hash it
+    if (data.password && data.password.trim() !== "") {
+      const saltRounds = 10;
+      data.password = await bcrypt.hash(data.password, saltRounds);
+    } else {
+      // If no password → remove it so DB doesn't overwrite
+      delete data.password;
+    }
+
     await ridersDB.update(id, data);
-    return ridersDB.getById(id);
-  },
+    return await ridersDB.getById(id);
+
+  } catch (err) {
+    throw new Error("Failed to update rider: " + err.message);
+  }
+},
 
   async updateStatus(id, status) {
     const allowed = ['active', 'inactive'];

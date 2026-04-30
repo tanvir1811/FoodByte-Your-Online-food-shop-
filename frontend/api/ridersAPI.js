@@ -6,8 +6,8 @@ export const ridersAPI = async (operation, payload = {}) => {
     getAll:       { method: 'GET',    url: '/api/riders' },
     getOne:       { method: 'GET',    url: `/api/riders/${payload.id}` },
      getMe:        { method: 'GET',   url: '/api/riders/me' }, 
-    updateMe:     { method: 'PUT',    url: '/api/riders/me' },
     updateStatus: { method: 'PATCH',  url: `/api/riders/${payload.id}/status` },
+    updateall: { method: 'PATCH',  url: `/api/riders/${payload.id}/all` },
     delete:       { method: 'DELETE', url: `/api/riders/${payload.id}` },
   };
 

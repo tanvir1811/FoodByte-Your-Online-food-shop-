@@ -74,18 +74,21 @@ const getRider = async (req, res) => {
 };
 
 // ============================================================
-// UPDATE PROFILE (rider updates their own profile)
+// UPDATE PROFILE (rider updates  by admin )
 // ============================================================
 
 const updateRider = async (req, res) => {
   try {
-    const id = req.session.user?.id;
-    if (!id) return res.status(401).json({ status: 'fail', message: 'Not logged in.' });
+    const id = req.params.id; // ✅ ONLY from URL
+
+    if (!id) {
+      return res.status(400).json({ status: 'fail', message: 'Rider ID is required.' });
+    }
 
     const updated = await riderService.updateProfile(id, req.body);
-    req.session.user = { ...req.session.user, ...req.body };
 
     res.json({ status: 'ok', rider: updated });
+
   } catch (err) {
     res.status(500).json({ status: 'fail', message: err.message });
   }

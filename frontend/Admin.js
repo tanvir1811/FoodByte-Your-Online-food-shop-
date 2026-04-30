@@ -389,18 +389,34 @@ async function register_a_rider() {
 // ============================================================
 
 async function updateRiderStatus() {
-  const statusEl      = document.querySelector('input[name="rider-status"]:checked');
-  const updatedStatus = statusEl ? statusEl.value : null;
+  const values = getRiderFormValues();
 
-  if (!updatedStatus) {
-    alert("Please select a status.");
+  // For update → password is optional
+  if (!values.username || !values.phone) {
+    alert("Please fill in required fields (Name, Phone).");
+    return;
+  }
+
+  // If password entered, validate match
+  if (values.password && values.password !== values.confirmPassword) {
+    alert("Passwords do not match!");
     return;
   }
 
   setRiderBtnState("Updating...", true);
 
   try {
-    const result = await ridersAPI('updateStatus', { id: currentRiderId, status: updatedStatus });
+    const result = await ridersAPI('updateall', {
+      id: currentRiderId,
+      username: values.username,
+      phone: values.phone,
+      password: values.password || null, // optional
+      license_link: values.license_link,
+      photo_link: values.photo_link,
+      joining_date: values.joining_date,
+      status: values.status
+    });
+
     if (result?.status === 'ok') {
       alert("✅ Rider updated successfully!");
       resetRiderForm();
@@ -504,7 +520,15 @@ window.modifyRider = async (idRider) => {
     document.getElementById('rider-phone').value    = rider.phone        || "";
     document.getElementById('rider-license').value  = rider.license_link || "";
     document.getElementById('rider-photo').value    = rider.photo_link   || "";
-    document.getElementById('rider-joining').value  = rider.joining_date || "";
+    let joiningDate = "";
+
+if (rider.joining_date) {
+  joiningDate = new Date(rider.joining_date)
+    .toISOString()
+    .split("T")[0];
+}
+
+document.getElementById('rider-joining').value = joiningDate;
     document.getElementById('rider-password').value = "";
     document.getElementById('rider-vehicle').value  = "";
 
